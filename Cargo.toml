@@ -1,0 +1,30 @@
+[package]
+name = "spotiflac-updater"
+version = "1.0.0"
+edition = "2024"
+rust-version = "1.96"
+authors = ["Ok 2.0"]
+description = "Update the SpotiFLAC-Next/SpotBye AppImage from a Proton Drive share link"
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com/Ok2dot0/spotiflac-updater"
+keywords = ["spotiflac", "spotbye", "appimage", "proton-drive", "updater"]
+categories = ["command-line-utilities"]
+publish = false
+
+[dependencies]
+anyhow = "1"
+chrono = "0.4"
+clap = { version = "4", features = ["derive"] }
+hex = "0.4"
+proton-drive-rs = "0.11"
+proton-sdk = "0.11"
+rpassword = "7"
+sha2 = "0.11"
+tempfile = "3"
+tokio = { version = "1", features = ["macros", "rt-multi-thread"] }
+zip = "9"
+
+[profile.release]
+strip = true
+lto = "thin"

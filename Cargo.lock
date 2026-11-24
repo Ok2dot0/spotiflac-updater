@@ -2283,7 +2283,7 @@ dependencies = [
  "hmac 0.13.0",
  "lru",
  "pgp",
- "proton-sdk",
+ "proton-sdk 0.11.0",
  "reqwest",
  "serde",
  "serde_json",
@@ -2300,6 +2300,40 @@ name = "proton-sdk"
 version = "0.11.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "bd55a5e8b6600f3aa282ebbdf13ff366431ff9aae84d4eb20b0ef06d598919fe"
+dependencies = [
+ "aes-gcm 0.11.1",
+ "async-trait",
+ "base64 0.23.1",
+ "bcrypt",
+ "bytes",
+ "chrono",
+ "futures",
+ "getrandom 0.4.3",
+ "hex",
+ "hkdf 0.13.0",
+ "hmac 0.13.0",
+ "lru",
+ "num-bigint",
+ "num-traits",
+ "pgp",
+ "rand 0.10.3",
+ "rand 0.8.8",
+ "reqwest",
+ "serde",
+ "serde_json",
+ "serde_repr",
+ "sha2 0.11.1",
+ "thiserror 2.0.21",
+ "tokio",
+ "tracing",
+ "zeroize",
+]
+
+[[package]]
+name = "proton-sdk"
+version = "0.12.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "3189873dcdf0bc0a3d0fa5619cea80594085252d1d66a57459ec6adfd1f35ac1"
 dependencies = [
  "aes-gcm 0.11.1",
  "async-trait",
@@ -2986,7 +3020,7 @@ dependencies = [
  "clap",
  "hex",
  "proton-drive-rs",
- "proton-sdk",
+ "proton-sdk 0.12.2",
  "rpassword",
  "sha2 0.11.1",
  "tempfile",

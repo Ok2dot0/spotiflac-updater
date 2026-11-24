@@ -17,7 +17,7 @@ anyhow = "1"
 chrono = "0.4"
 clap = { version = "4", features = ["derive"] }
 hex = "0.4"
-proton-drive-rs = "0.11"
+proton-drive-rs = "0.12"
 proton-sdk = "0.11"
 rpassword = "7"
 sha2 = "0.11"

@@ -169,12 +169,12 @@ download_release() {
 
     asset="$APP_NAME-$TARGET.tar.gz"
     say "Downloading $asset..."
-    if ! curl -fL --retry 3 --connect-timeout 15 \
+    if ! curl -fsSL --retry 3 --connect-timeout 15 \
         -o "$TMP_DIR/$asset" "$base/$asset"; then
         return 1
     fi
 
-    if ! curl -fL --retry 3 --connect-timeout 15 \
+    if ! curl -fsSL --retry 3 --connect-timeout 15 \
         -o "$TMP_DIR/SHA256SUMS" "$base/SHA256SUMS"; then
         return 1
     fi
@@ -183,6 +183,7 @@ download_release() {
     [ -n "$expected" ] || die "SHA256SUMS does not list $asset"
     actual="$(sha256sum "$TMP_DIR/$asset" | awk '{ print $1 }')"
     [ "$expected" = "$actual" ] || die "checksum mismatch for $asset; nothing installed"
+    say "Checksum verified."
 
     tar -xzf "$TMP_DIR/$asset" -C "$TMP_DIR"
     extracted="$TMP_DIR/${APP_NAME}-${TARGET}/$APP_NAME"
